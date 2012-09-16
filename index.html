@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>Geoloc</title>
+	<script type="text/javascript" src="http://libs.cpfk.net/js/jquery/latest.js"></script>
+	<script type="text/javascript" src="http://libs.cpfk.net/js/jquery/easydate/0.2.4.js"></script>
+	<link href="img/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
+	<meta content="width=device-width" name="viewport">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="user-scalable=no" name="viewport">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<script type="text/javascript" src="gps.js"></script>
+	
+	<style type="text/css">
+		* {
+			margin:0;
+			padding:0;
+			border:0;
+		}
+		html {
+			background: black;
+			background: -moz-linear-gradient(top, rgb(73,73,73) 0%, rgb(0,0,0) 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(0,0,0)));
+			background: -webkit-linear-gradient(top, rgb(73,73,73) 0%,rgb(0,0,0) 100%);
+			background: -o-linear-gradient(top, rgb(73,73,73) 0%,rgb(0,0,0) 100%);
+			background: -ms-linear-gradient(top, rgb(73,73,73) 0%,rgb(0,0,0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#000000',GradientType=0 );
+			background: linear-gradient(top, rgb(73,73,73) 0%,rgb(0,0,0) 100%);
+		}
+		body {
+			height: 920px;
+			width: 640px;
+			
+			color: #328c2e;
+			text-shadow: 0px -1px black;
+			font-family: Sans-serif;
+			font-size: 30px;
+		}
+		h1 {
+			font-size: 44px;
+		}
+		a {
+			color: #328c2e;
+		}
+		#by {
+			float: right;
+			text-align: right;
+		}
+		#content {
+			margin: 10px;
+			width: 620px;
+			height: 900px;
+		}
+		ul {
+			margin-left: 20px;
+			margin-left: 10px;
+			list-style-type: none;
+		}
+		canvas {
+			margin: 10px;
+			border: 1px solid #cccccc;
+		}
+	</style>
+</head>
+<body onload="startWatch(); Navigator.init();">
+	<div id="content">
+		<h1>HTML5 GPS</h1>
+		<ul>
+			<li>Accuracy: <span id="prec"></span></li>
+			<li>Altitude: <span id="alt"></span></li>
+			<li>Compass: <span id="angle"></span></li>
+			<li>Last Update: <abbr class="easydate" id="time"></abbr></li>
+		</ul>
+		<canvas height="600" width="600" id="canvas"></canvas>
+		<p id="by"><a href="http://twitter.com/Binary_Brain">by Sacha Bron</a></p>
+		<p><a href="#" onclick="googleMaps();">Google Maps</a></p>
+	</div>
+</body>
+</html>
